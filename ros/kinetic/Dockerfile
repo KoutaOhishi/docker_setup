@@ -11,6 +11,9 @@ RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc &&\
 	echo "export ROS_PACKAGE_PATH=\${ROS_PACKAGE_PATH}:/home/ubuntu/catkin_ws" >> ~/.bashrc &&\
 	echo "export ROS_WORKSPACE=/home/ubuntu/catkin_ws" >> ~/.bashrc
 
+#set to the same Gateway as the host pc
+RUN echo "nameserver 150.37.224.1" >> /etc/resolv.conf 
+
 RUN apt update
 
 #install apps

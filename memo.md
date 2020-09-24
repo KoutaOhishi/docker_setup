@@ -37,3 +37,6 @@ docker rm `docker ps -a -q` #all
 
 # DNSの設定
 /etc/resolv.confのnameserverをHOSTと同じネットワークのゲートウェイにするとうまく行った
+
+
+
