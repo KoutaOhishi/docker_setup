@@ -22,6 +22,8 @@ docker build --tag <NAME> .
 docker run -it <NAME>
 ```
 
+http://127.0.0.1:6080/
+
 ##remove container
 ```
 docker rm <ID>
