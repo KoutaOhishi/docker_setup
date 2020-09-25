@@ -21,7 +21,7 @@ docker build --tag <NAME> --network host .
 ##run image as a container
 ```
 docker run -it <NAME>
-docker run --p 6080:80 --shm-size=1024m --privileged <NAME>
+docker run -p 6080:80 --shm-size=1024m --privileged <NAME>
 ```
 
 http://127.0.0.1:6080/
@@ -38,6 +38,28 @@ docker rm `docker ps -a -q` #all
 
 # DNSの設定
 /etc/resolv.confのnameserverをHOSTと同じネットワークのゲートウェイ/DNSserverにするとうまく行った
+ホストPCの/etc/docker/daemon.jsonに、
+```
+{
+	"dns":["x.x.x.x","x.x.x.y"]
+}
+```
+を記述し、
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
 
 
+#pythonのopencvの設定
+```
+import sys
+sys.path.remove("/opt/ros/kinetic/lib/python2.7/dist-packages")
+import cv2
+```
+とすることで、デフォルトの3.3.1-devではなく、新しく入れた方のopencvをimportできるようになる
+
+
+https://kazuhira-r.hatenablog.com/entry/2020/04/12/194225
+https://qiita.com/frost-tb-voo/items/fcc0c0fe7561b9101bf4
 
