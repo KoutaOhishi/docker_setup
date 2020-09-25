@@ -21,6 +21,7 @@ docker build --tag <NAME> --network host .
 ##run image as a container
 ```
 docker run -it <NAME>
+docker run --p 6080:80 --shm-size=1024m --privileged <NAME>
 ```
 
 http://127.0.0.1:6080/
@@ -36,7 +37,7 @@ docker rm `docker ps -a -q` #all
 
 
 # DNSの設定
-/etc/resolv.confのnameserverをHOSTと同じネットワークのゲートウェイにするとうまく行った
+/etc/resolv.confのnameserverをHOSTと同じネットワークのゲートウェイ/DNSserverにするとうまく行った
 
 
 
