@@ -18,8 +18,8 @@ RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc &&\
 #RUN echo "nameserver 150.37.224.1" >> /etc/resolv.conf 
 
 #install apps
-RUN apt update
-RUN apt install -y iputils-ping #install ping
+RUN apt-get update
+RUN apt-get install -y iputils-ping #install ping
 
 #install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -30,8 +30,8 @@ RUN echo "### Build OpenCV ###"
 ARG OPENCV_VERSION="3.4.2"
 
 # Build tools
-RUN apt update && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get install -y \
     sudo \
     tzdata \
     git \
@@ -41,7 +41,7 @@ RUN apt update && \
     build-essential
 
 # Media I/O:
-RUN apt install -y \
+RUN apt-get install -y \
     zlib1g-dev \
     libjpeg-dev \
     libwebp-dev \
@@ -52,7 +52,7 @@ RUN apt install -y \
     libgtk2.0-dev
 
 # Video I/O:
-RUN apt install -y \
+RUN apt-get install -y \
     libdc1394-22-dev \
     libavcodec-dev \
     libavformat-dev \
@@ -71,7 +71,7 @@ RUN apt install -y \
     ffmpeg
 
 # Parallelism and linear algebra libraries:
-RUN apt install -y \
+RUN apt-get install -y \
     libtbb-dev \
     libeigen3-dev
 
