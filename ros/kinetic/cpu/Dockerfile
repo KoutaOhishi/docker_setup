@@ -18,8 +18,9 @@ RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc &&\
 #RUN echo "nameserver 150.37.224.1" >> /etc/resolv.conf 
 
 #install apps
-RUN apt-get update
-RUN apt-get install -y iputils-ping #install ping
+RUN apt-get update &&\
+    apt-get install --assume-yes apt-utils &&\
+    apt-get install -y iputils-ping #install ping
 
 #install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -98,8 +99,8 @@ RUN echo "### Build OpenCV SUCCESS ###"
 
 
 #clean cache
+RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/
-RUN apt clean
 
 ######### initial position ##########
 WORKDIR /home/ubuntu/
