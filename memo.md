@@ -59,6 +59,12 @@ import cv2
 ```
 とすることで、デフォルトの3.3.1-devではなく、新しく入れた方のopencvをimportできるようになる
 
+#"WARNING: apt does not have a stable CLI interface. Use with caution in scripts."と出る場合
+"apt"から"apt-get"にすると消える。
+ターミナルのようなインタラクティブなCLIでは"apt"を、スクリプト内では"apt-get"を使うのがルールっぽい。
+https://wp.tekapo.com/2019/07/15/difference-between-apt-and-apt-get/
+
+
 
 https://kazuhira-r.hatenablog.com/entry/2020/04/12/194225
 https://qiita.com/frost-tb-voo/items/fcc0c0fe7561b9101bf4
