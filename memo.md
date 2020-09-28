@@ -26,6 +26,10 @@ docker run -p 6080:80 --name <CONTAINER_NAME> --shm-size=1024m --privileged <IMA
 
 http://127.0.0.1:6080/
 
+docker run の際に”--device /dev/dri:/dev/dri --device /dev/video0:/dev/video0:mwr”をつければ指定したデバイスがコンテナ内でも使える
+
+
+
 ##remove container
 ```
 docker rm <ID>
