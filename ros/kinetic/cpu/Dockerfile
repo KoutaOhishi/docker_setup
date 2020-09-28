@@ -97,6 +97,9 @@ RUN rm -rf /home/ubuntu/opencv && rm -rf /home/ubuntu/opencv_contrib
 
 RUN echo "### Build OpenCV SUCCESS ###"
 
+#install ros packages
+RUN apt-get install ros-kinetic-openni2-*
+
 
 #clean cache
 RUN apt-get clean
