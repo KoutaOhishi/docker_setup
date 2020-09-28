@@ -22,7 +22,7 @@ sudo apt install -y docker-ce
 #run as a normal user
 sudo usermod -aG docker $USER
 
-#install nividia-docker
+#install nividia-docker https://blog.amedama.jp/entry/2017/04/03/235901
 wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 sudo dpkg -i nvidia-docker_1.0.1-1_amd64.deb
 systemctl list-units --type=service | grep -i nvidia-docker
