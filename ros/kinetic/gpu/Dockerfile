@@ -17,7 +17,8 @@ RUN apt-get install -y \
             wget \
 	    git \
 	    libhdf5-dev \
-	    g++ 
+	    g++ \
+	    vim
 
 #install curl
 RUN apt-get update &&\
