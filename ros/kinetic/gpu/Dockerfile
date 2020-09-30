@@ -1,7 +1,6 @@
 ARG cuda_version=9.0
 ARG cudnn_version=7
 ARG distribution=ubuntu16.04
-ARG tensorflow-gpu_version=1.12.0
 
 FROM nvidia/cuda:${cuda_version}-cudnn${cudnn_version}-devel-${distribution}
 
@@ -35,7 +34,7 @@ RUN python2.7 get-pip.py
 RUN pip install -U pip
 
 #install tensorflow & keras
-RUN pip install tensorflow-gpu==${tensorflow-gpu_version} &&\
+RUN pip install tensorflow-gpu==1.12.0 &&\
     pip install keras
 
 #clean cache
