@@ -5,5 +5,5 @@ docker run -p 6080:80 \
      --device /dev/video0:/dev/video0:mwr \
      --shm-size=512m \
      --name kinetic_gpu #container_name\
-     --previleged \
+     --privileged \
      kinetic_gpu #image_name
