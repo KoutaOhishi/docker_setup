@@ -172,6 +172,8 @@ RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc &&\
 	echo "export ROS_PACKAGE_PATH=\${ROS_PACKAGE_PATH}:/home/ubuntu/catkin_ws" >> ~/.bashrc &&\
 	echo "export ROS_WORKSPACE=/home/ubuntu/catkin_ws" >> ~/.bashrc
 
+#set time zone
+ENV TZ Asia/Tokyo
 
 #clean cache
 RUN rm -rf /var/lib/apt/lists/

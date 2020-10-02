@@ -100,6 +100,8 @@ RUN echo "### Build OpenCV SUCCESS ###"
 #install ros packages
 RUN apt-get install ros-kinetic-openni2-*
 
+#set time zone
+ENV TZ Asia/Tokyo
 
 #clean cache
 RUN apt-get clean
